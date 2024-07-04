@@ -11,18 +11,31 @@ document.addEventListener("DOMContentLoaded", async () => {
   data.map((character: Result) => {
     console.log(character);
     const li = document.createElement("li") as HTMLLIElement;
-    const h4 = document.createElement("h4") as HTMLHeadingElement;
+    const name = document.createElement("h4") as HTMLHeadingElement;
     const image = document.createElement("img") as HTMLImageElement;
-    const alive = document.createElement("p") as HTMLParagraphElement;
+    const status= document.createElement("p") as HTMLParagraphElement;
+    const specie= document.createElement("p") as HTMLParagraphElement;
+    const gender= document.createElement("p") as HTMLParagraphElement;
+    const location= document.createElement("p") as HTMLParagraphElement;
+    const origin= document.createElement("p") as HTMLParagraphElement;
 
-    h4.innerText = character.name;
+    name.innerText = character.name;
     image.src = character.image;
     image.className = "image";
-    alive.innerText = `Status: ${character.status}`;
+    status.innerText = `Status: ${character.status}`;
+    specie.innerText = `Specie: ${character.species}`;
+    gender.innerText = `Gender: ${character.gender}`;
+    location.innerText = `Location: ${character.location.name}`;
+  origin.innerText = `Origin: ${character.origin.name}`;
 
-    li.append(h4);
+    
     li.append(image);
-    li.append(alive);
+    li.append(name);
+    li.append(status);
+    li.append(specie);
+    li.append(gender);
+    li.append(location);
+    li.append(origin);
 
     ul.appendChild(li);
   });
